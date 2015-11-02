@@ -11,6 +11,16 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+plugins {
+    id "org.sonarqube" version "1.0"
+}
+sonarqube {
+    properties {
+        property "sonar.projectName", "My Project Name"
+        property "sonar.projectKey", "java-gradle-simple"
+        property "sonar.modules", "app"
+    }
+}
 
 allprojects {
     repositories {
